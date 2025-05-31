@@ -34,6 +34,25 @@ export default function Map() {
                     .bindPopup("Main")
                     .addTo(mapRef.current!);
             });
+
+        fetch("/rhine.geojson")
+            .then((res) => res.json())
+            .then((data) => {
+                L.geoJSON(data, {
+                    style: { color: "orange", weight: 4 },
+                })
+                    .bindPopup("Rhine")
+                    .addTo(mapRef.current!);
+            });
+        fetch("/seine.geojson")
+            .then((res) => res.json())
+            .then((data) => {
+                L.geoJSON(data, {
+                    style: { color: "pink", weight: 4 },
+                })
+                    .bindPopup("Seine")
+                    .addTo(mapRef.current!);
+            });
     }, []);
 
     return <div id='map' className='w-full h-full' />;
