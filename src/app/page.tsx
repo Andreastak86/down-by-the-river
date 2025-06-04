@@ -1,5 +1,5 @@
 "use client";
-// test
+//back to basic
 import dynamic from "next/dynamic";
 import Head from "next/head";
 
