@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -55,5 +57,5 @@ export default function Map() {
             });
     }, []);
 
-    return <div id='map' className='w-full h-full' />;
+    return <div id='map' data-testid='map' className='w-full h-full' />;
 }
